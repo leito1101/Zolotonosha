@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='ConversionLogFile.xsl'?>
+<LogFile projectName="ZOLOTON__4_19_02_15_V13_SP1" typeText="Type" messageText="Message" timeText="Time">
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="6/23/2016 2:55:44 PM">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="Upgrade started" />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="6/23/2016 2:55:44 PM">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="Reading information from previous project/library." />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="6/23/2016 2:55:52 PM">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="Updating new project/library." />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="6/23/2016 2:55:55 PM">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="Updating new project/library." />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:55 PM" Debug="false">
+    <Text>Will not convert the core object with name: "X1 : PN(LAN)" and ID: "{1052701-149911}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:55 PM" Debug="false">
+    <Text>Will not convert the core object with name: "X1 : PN(LAN)" and ID: "{1052701-149914}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:55 PM" Debug="false">
+    <Text>Will not convert the core object with name: "X2" and ID: "{1052701-149919}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Will not convert the core object with name: "S7-1200 station_2" and ID: "{1052686-149907}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Will not convert the core object with name: "DeviceProxy-Station_1" and ID: "{1052686-149915}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Will not convert the core object with name: "S7-1200 rack" and ID: "{1052689-149908}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Will not convert the core object with name: "PROFINET interface_1" and ID: "{1052689-149910}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Will not convert the core object with name: "PROFINET interface_1" and ID: "{1052689-149913}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Will not convert the core object with name: "Rack_0" and ID: "{1052689-149916}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Will not convert the core object with name: "ZOLOTON_PAST_12122014\PASTER\CPU 314C-2 PN/DP\PASTER" and ID: "{1052689-149918}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Will not convert the core object with name: "PLC_Proxy" and ID: "{1052758-149917}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Will not convert the core object with name: "PLC_PASTER_3" and ID: "{1052700-149909}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Will not convert the core object with name: "PLC_PASTER_2" and ID: "{1052700-149912}" because it is "a TRef".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Preparing conversion of the S7 program for CPU "PLC_PASTER"</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:55:58 PM" Debug="false">
+    <Text>Conversion completed.</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:56:12 PM" Debug="false">
+    <Text>Converting S7 program for CPU "PLC_PASTER".</Text>
+  </Details>
+  <Details ServiceId="80" MessageId="30" Timestamp="6/23/2016 2:56:20 PM" Debug="false">
+    <Text>Conversion completed.</Text>
+  </Details>
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="6/23/2016 2:56:29 PM">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="Updating new project/library." />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <MessageCell ServiceId="80" MessageId="30" MessageClass="Information" Timestamp="6/23/2016 2:56:29 PM">
+    <Number ServiceNumber="80" MessageNumber="30" />
+    <Text FeedbackText="Saving the upgraded project/library." />
+    <Help HelpId="-1" />
+  </MessageCell>
+  <MessageCell ServiceId="Automation-ObjectFrame-Feedbacks" MessageId="ConversionInfoTabProjectSucceeded" MessageClass="Success" Timestamp="6/23/2016 2:56:30 PM">
+    <Number ServiceNumber="80" MessageNumber="34" />
+    <Text FeedbackText="Project 'ZOLOTON__4_19_02_15' was successfully upgraded and saved as project 'ZOLOTON__4_19_02_15_V13_SP1'." />
+    <Help HelpId="-1" HelpFile="" />
+  </MessageCell>
+</LogFile>

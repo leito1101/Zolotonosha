@@ -1,0 +1,613 @@
+;
+;********************* GSD-Datei for CTEU-PB ************************************************************
+;* ==================================================================================================== *
+;*                                                                                                      *
+;* Vendor:   Festo AG & Co. KG                                                                          *
+;*           Ruiter Straße 82                                                                           *
+;*           73734 Esslingen                                                                            *
+;*           Germany                                                                                    *
+;*           Tel.: ++49-0711-347-0                                                                      *
+;*           FAX.: ++49-0711-347-2628                                                                   *
+;*                                                                                                      *
+;* ==================================================================================================== *
+;*                                                                                                      *
+;* Function:       CTEU Busknoten Profibus                                                              *
+;*                                                                                                      *
+;*                                                                                                      *
+;* Order Number : CTEU-PB 2011                                                                          *
+;*                                                                                                      *
+;* ---------------------------------------------------------------------------------------------------- *
+;* author: M. Weiler                                                                                    *
+;*                                                                                                      *
+;*   Tel.: ++49-0711-347-56483                                                                          *
+;*   FAX.: ++49-0711-347-5456483                                                                        *
+;* ---------------------------------------------------------------------------------------------------- *
+;*                                                                                                      *
+;* history                                                                                              *
+;* ==================================================================================================== *
+;* 06.05.2011 [V1.00]  Urversion                                                                        *
+;* 22.06.2011 [V2.00]  aenderung in registrierten ID CODE und anpassung Filename                        *
+;* 22.09.2011 [V2.01]  aenderung der Module in real existierende Module + DPV1 + Kanaldiagbeschreibung  *
+;* 14.11.2011 [V2.02]  Defaultwerte und Parameterdatenbezeichnung Modul CTSL geändert                   *
+;* 03.02.2012 [V2.03]  ToolChange Mode dazu                                                             *
+;* 24.04.2012 [V2.04]  Module geaendert, angepasst, sortiert und geloescht                              *
+;* 24.07.2012 [V2.05]  Module slot definition hinzu und prm Modul_Offset auf 1        *
+;* ---------------------------------------------------------------------------------------------------- *
+;*                                                                                                      *
+;********************************************************************************************************
+
+
+#Profibus_DP
+
+;========================================================================================================
+;==== Prm-Text-Def-List =================================================================================
+;========================================================================================================
+
+
+;========================================================================================================
+;==== General DP Keywords ===============================================================================
+;========================================================================================================
+
+GSD_Revision = 5
+Vendor_Name = "Festo AG & Co. KG"
+Model_Name = "CTEU-PB"
+Revision = "2.04"
+Ident_Number = 0x0D67
+Protocol_Ident = 0
+Station_Type = 0
+FMS_supp = 0
+Hardware_Release = "V2.00"
+Software_Release = "V2.00"
+Redundancy = 0
+Repeater_Ctrl_Sig = 2
+24V_Pins = 0
+
+
+;========================================================================================================
+;==== Supported baudrates ===============================================================================
+;========================================================================================================
+
+9.6_supp = 1
+19.2_supp = 1
+45.45_supp = 1
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+3M_supp = 1
+6M_supp = 1
+12M_supp = 1
+
+MaxTsdr_9.6=15
+MaxTsdr_19.2=15
+MaxTsdr_45.45=15
+MaxTsdr_93.75=15
+MaxTsdr_187.5=15
+MaxTsdr_500=15
+MaxTsdr_1.5M=20
+MaxTsdr_3M=35
+MaxTsdr_6M=50
+MaxTsdr_12M=95
+
+
+;========================================================================================================
+;==== Slave specific values =============================================================================
+;========================================================================================================
+
+;OrderNumber="CTEU-PB2011"
+Slave_Family=4@Festo AG und Co. KG
+Implementation_Type = "VPC3+"
+Info_Text="Festo CTEU-PB FEST0D67"
+Bitmap_Device = "CTEU_PB"
+Bitmap_Diag   = "CTEU_PBD"
+Bitmap_SF     = "CTEU_PBS"
+Freeze_Mode_supp=1
+Sync_Mode_supp=1
+Fail_Safe=0
+Auto_Baud_supp=1
+Set_Slave_Add_supp=0
+
+Min_Slave_Intervall=5
+
+Modular_Station=1
+Max_Diag_Data_Len   = 28 
+Max_Module          = 0x03
+Max_Input_Len       = 0x10
+Max_Output_Len      = 0x10
+Max_Data_Len        = 0x0020
+Modul_Offset        = 1
+
+PrmText = 0                              ; Referenznummer 0
+Text(0) = "Ja"
+Text(1) = "Nein"
+EndPrmText
+
+
+PrmText = 1                              ; Referenznummer 1
+Text(0) = "0,5ms"
+Text(1) = "3ms"
+Text(2) = "10ms"
+Text(3) = "20ms"
+EndPrmText
+
+
+PrmText = 2                              ; Referenznummer 2
+Text(0) = "0,5ms"
+Text(1) = "15ms"
+Text(2) = "50ms"
+Text(3) = "100ms"
+EndPrmText
+
+PrmText = 3                              ; Referenznummer 3
+Text(0) = "Aus"
+Text(1) = "Ein"
+EndPrmText
+
+
+
+;=====================================================================================
+;==== Ext-User-Prm-Data-Def-List =====================================================
+;=====================================================================================
+
+ExtUserPrmData = 3 "Ext.Paramter Byte1"
+Unsigned8 0 0-255
+EndExtUserPrmData
+
+ExtUserPrmData = 4 "Ext.Paramter Byte2"
+Unsigned8 0 0-255
+EndExtUserPrmData
+
+ExtUserPrmData = 5 "Ext.Paramter Byte3"
+Unsigned8 0 0-255
+EndExtUserPrmData
+
+ExtUserPrmData = 6 "Ext.Paramter Byte4"
+Unsigned8 0 0-255
+EndExtUserPrmData
+
+ExtUserPrmData = 7 "Ext.Paramter Byte5"
+Unsigned8 0 0-255
+EndExtUserPrmData
+
+ExtUserPrmData = 8 "Ext.Paramter Byte6"
+Unsigned8 0 0-255
+EndExtUserPrmData
+
+ExtUserPrmData = 9 "Ext.Paramter Byte7"
+Unsigned8 0 0-255
+EndExtUserPrmData
+
+ExtUserPrmData = 10 "Ext.Paramter Byte8"
+Unsigned8 0 0-255
+EndExtUserPrmData
+
+ExtUserPrmData = 11 "Diagnose Kurzschluss"
+Bit(0) 1 0-1
+Prm_Text_Ref = 0
+EndExtUserPrmData
+
+ExtUserPrmData = 12 "Automatische wiederkehr nach KZS"
+Bit(1) 1 0-1
+Prm_Text_Ref = 0
+EndExtUserPrmData
+
+ExtUserPrmData = 13 "Eingangsentprellung"
+BitArea(4-5) 1 0-3
+Prm_Text_Ref = 1
+EndExtUserPrmData
+
+ExtUserPrmData = 14 "Signalverlaengerung"
+BitArea(6-7) 0 0-3
+Prm_Text_Ref = 2
+EndExtUserPrmData
+
+ExtUserPrmData = 15 "Aktivierung SignVerl/Kanal G1"
+BitArea(6-7) 0 0-3
+Prm_Text_Ref = 3
+EndExtUserPrmData
+
+ExtUserPrmData = 16 "Aktivierung SignVerl/Kanal G2"
+BitArea(6-7) 0 0-3
+Prm_Text_Ref = 3
+EndExtUserPrmData
+
+ExtUserPrmData = 17 "Werkzeug Wechsel Mode IPort1"  ; Tool Change Mode
+Bit(0) 0 0-1
+Prm_Text_Ref = 3
+EndExtUserPrmData
+
+ExtUserPrmData = 18 "Werkzeug Wechsel Mode IPort2"  ; Tool Change Mode
+Bit(1) 0 0-1
+Prm_Text_Ref = 3
+EndExtUserPrmData
+
+
+;----------  ------------
+;==============================================================================
+;==== Herstellerspezifische Kanalfehler =======================================
+;==============================================================================
+; Kanalfehler 0-15 genormt
+
+Channel_Diag(19) = "Sonstige I-Port Diagnose"
+Channel_Diag(20) = "Peripheriefehler Konfigfehler"
+Channel_Diag(27) = "Hardwarefehler"
+Channel_Diag(29) = "Kurzschluss I-Port"
+Channel_Diag(31) = "Kanal ausgefallen"
+
+
+;==============================================================================
+;==== User-Prm-Data ===========================================================
+;==============================================================================
+
+Max_User_Prm_Data_Len = 32
+Ext_User_Prm_Data_Const(0)= 0x84,0x00,0x00
+
+
+;==============================================================================
+;==== Module-Definition-List ==================================================
+;==============================================================================
+
+
+Module="CTEU-PB: DP-Slave" 0x00
+Info_Text ="Busknoten Profibus"  
+1
+Ext_Module_Prm_Data_Len= 2
+Ext_User_Prm_Data_Const(0)=0x02,0x00
+Ext_User_Prm_Data_Ref(1)=17            ; ToolChangeMode Iport1
+Ext_User_Prm_Data_Ref(1)=18            ; ToolChangeMode IPort2
+EndModule
+
+Module="CPV10-GE-PT-8" 0x21
+Info_Text ="CPV10-GE-PT-8 mit 16Ventile, 2 Byte Ausgaenge"  
+2
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x10,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="CPV14-GE-PT-8" 0x21
+Info_Text ="CPV14-GE_PT-8 mit 16Ventile, 2 Byte Ausgaenge"  
+3
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x10,0x05,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="CTSL M12" 0x11
+Info_Text ="CTSL mit 16 Eingaengen, 2 Byte Eingaenge, M12"
+4
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x10,0x04,0x70,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=11             ;Diagnose Kurzschluss für beide Gruppen
+Ext_User_Prm_Data_Ref(5)=12             ;Automatische Wiederkehr nach Kurzschluss für beide Gruppen
+Ext_User_Prm_Data_Ref(5)=13             ;Eingangsentprellung für beide Gruppen
+Ext_User_Prm_Data_Ref(5)=14             ;Signalverlängerung für beide Gruppen
+Ext_User_Prm_Data_Ref(6)=15             ;Aktivierung Signalverlängerung pro Kanal Gruppe1
+Ext_User_Prm_Data_Ref(7)=16             ;Aktivierung Signalverlängerung pro Kanal Gruppe2
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="CTSL M8" 0x11
+Info_Text ="CTSL mit 16 Eingaengen, 2 Byte Eingaenge, M8"
+5
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x10,0x04,0x70,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=11             ;Diagnose Kurzschluss für beide Gruppen
+Ext_User_Prm_Data_Ref(5)=12             ;Automatische Wiederkehr nach Kurzschluss für beide Gruppen
+Ext_User_Prm_Data_Ref(5)=13             ;Eingangsentprellung für beide Gruppen
+Ext_User_Prm_Data_Ref(5)=14             ;Signalverlängerung für beide Gruppen
+Ext_User_Prm_Data_Ref(6)=15             ;Aktivierung Signalverlängerung pro Kanal Gruppe1
+Ext_User_Prm_Data_Ref(7)=16             ;Aktivierung Signalverlängerung pro Kanal Gruppe2
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="VAEM-L1-S-8-PT" 0x21
+Info_Text ="VTUG mit bis zu 16 Ventile, 2 Byte Ausgaenge"
+6
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x10,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="VAEM-L1-S-16-PT" 0x23
+Info_Text ="VTUG mit bis zu 32 Ventile, 4 Byte Ausgaenge"
+7
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x20,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="VAEM-L1-S-24-PT" 0x25
+Info_Text ="VTUG-48 mit bis zu 48 Ventile, 6 Byte Ausgaenge"
+8
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x30,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="VAEM-L2-S-PTL-16" 0x13, 0x21
+Info_Text ="VTOC-Interlock/VTUG-Interlock mit 16 Ventile, 4 Byte Eingaenge 2 Byte Ausgaenge"
+9
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x10,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="VAEM-L2-S-PTL-32" 0x33
+Info_Text ="VTOC-Interlock/VTUG-Interlock  mit 32 Ventile, 4 Byte Eingaenge 4 Byte Ausgaenge"
+10
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x20,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="VAEM-L2-S-PTL-48" 0x13, 0x25
+Info_Text ="VTOC-Interlock/VTUG-Interlock  mit 48 Ventile, 4 Byte Eingaenge 6 Byte Ausgaenge"
+11
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x30,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="VMPAL-EPL-IPO32" 0x23
+Info_Text ="VMPAL-EPL-IPO32 mit 32 Ventile, 4 Byte Ausgaenge"
+12
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x20,0x06,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="VTUB-12-8" 0x20
+Info_Text ="VTUB-12 mit bis zu 8 Ventile, 1 Byte Ausgaenge"
+13
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x08,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="VTUB-12-16" 0x21
+Info_Text ="VTUB-12 mit bis zu 16 Ventile, 2 Byte Ausgaenge"
+14
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x10,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="VTUB-12-24" 0x23
+Info_Text ="VTUB-12 mit bis zu 24 Ventile, 4 Byte Ausgaenge"
+15
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x18,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="VTUB-12-35" 0x25
+Info_Text ="VTUB-12 mit bis zu 35 Ventile, 6 Byte Ausgaenge"
+16
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0x23,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="Universal 64DIO" 0x37
+Info_Text ="Universalmodul, bis zu 8 Byte Ein und Ausgaenge"  
+17
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0xFF,0xFF,0x08,0x08,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+Module="Universal 128DIO" 0x3F
+Info_Text ="Universalmodul, bis zu 16 Byte Ein und Ausgaenge"  
+18
+Ext_Module_Prm_Data_Len=13
+Ext_User_Prm_Data_Const(0)=0x0D,0xFF,0xFF,0x10,0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(5)=3             ;Extern Parameter Byte1
+Ext_User_Prm_Data_Ref(6)=4             ;Extern Parameter Byte2
+Ext_User_Prm_Data_Ref(7)=5             ;Extern Parameter Byte3
+Ext_User_Prm_Data_Ref(8)=6             ;Extern Parameter Byte4
+Ext_User_Prm_Data_Ref(9)=7             ;Extern Parameter Byte5
+Ext_User_Prm_Data_Ref(10)=8             ;Extern Parameter Byte6
+Ext_User_Prm_Data_Ref(11)=9             ;Extern Parameter Byte7
+Ext_User_Prm_Data_Ref(12)=10             ;Extern Parameter Byte8
+EndModule
+
+
+
+
+;==============================================================================
+;==== Slot-Definition-List ==================================================
+;==============================================================================
+
+SlotDefinition
+Slot(1) = "CTEU-PB: DP-Slave" 1 1
+EndSlotDefinition
+
+
+;-- DPV1 ------------------------------------------------------------
+
+Fail_Safe_required                   = 0
+DPV1_Slave                           = 1
+C1_Read_Write_supp                   = 1
+C2_Read_Write_supp                   = 1
+C1_Max_Data_Len                      = 240
+C2_Max_Data_Len                      = 240
+C1_Response_Timeout                  = 100       ; in units of 10ms
+C2_Response_Timeout                  = 100       ; in units of 10ms
+C1_Read_Write_required               = 0
+C2_Read_Write_required               = 0
+C2_Max_Count_Channels                = 2
+Max_Initiate_PDU_Length              = 52
+Diagnostic_Alarm_supp                = 0
+Process_Alarm_supp                   = 0
+Pull_Plug_Alarm_supp                 = 0
+Status_Alarm_supp                    = 0
+Update_Alarm_supp                    = 0
+Manufacturer_Specific_Alarm_supp     = 0
+Extra_Alarm_SAP_supp                 = 0
+Alarm_Sequence_Mode_Count            = 0
+Alarm_Type_Mode_supp                 = 0
+Diagnostic_Alarm_required            = 0
+Process_Alarm_required               = 0
+Pull_Plug_Alarm_required             = 0
+Status_Alarm_required                = 0
+Update_Alarm_required                = 0
+Manufacturer_Specific_Alarm_required = 0
+; DPV1_Data_Types                    = 0        ; optional
+WD_Base_1ms_supp                     = 1
+Check_Cfg_Mode                       = 0
+Ident_Maintenance_supp               = 1
+;--------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
